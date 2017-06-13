@@ -4,6 +4,7 @@ Quando estamos testando é comum precisarmos fazer testes em mais de um browser,
 
 Primeiramente é necessário fazer a configuração da sua env.rb com o register driver: </p>
 
+<blockquote>
 Capybara.register_driver :selenium do |app|
  
     if BROWSER.eql?('chrome')
@@ -35,3 +36,4 @@ Capybara.register_driver :selenium do |app|
         Capybara::Poltergeist::Driver.new(app, options)
     end
 end
+</blockquote>
