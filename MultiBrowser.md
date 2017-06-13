@@ -5,6 +5,8 @@ Quando estamos testando é comum precisarmos fazer testes em mais de um browser,
 Primeiramente é necessário fazer a configuração da sua env.rb com o register driver: </p>
 
 <blockquote>
+BROWSER = ENV['BROWSER']
+
 Capybara.register_driver :selenium do |app|
  
     if BROWSER.eql?('chrome')
@@ -37,3 +39,18 @@ Capybara.register_driver :selenium do |app|
     end
 end
 </blockquote>
+
+Após configurar o env.rb precisamos criar um profile no arquivo cucumber.yml para facilitar a chamada do browser. </p>
+
+<blockquote>
+ chrome: BROWSER=chrome
+ firefox: BROWSER=firefox
+ edge: BROWSER=edge
+ iexplorer: BROWSER=iexplorer
+ safari: BROWSER=safari
+</blockquote>
+
+Na hora de fazer a chamada basta acrescentar "-p NomeDoBrowser"
+
+Até a próxima :)
+
